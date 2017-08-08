@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[博客测试]]></title>
+    <url>%2F2017%2F08%2F08%2Fmy-new-post%2F</url>
+    <content type="text"><![CDATA[欢迎使用全新的有道云笔记——— 记录工作和生活点滴，办公文档随身携带您可以在这里1、新建笔记，在笔记中输入文字内容，插入图片、表格、附件，随时随地记录身边点滴2、上传办公文档，直接在有道云笔记内管理、查看和编辑各类Office、PDF文档3、自动实时备份，有道云笔记将您的宝贵数据实时同步到云端，永久留存4、多平台信息同步，通过电脑、手机、网页随时随地查看和编辑您的文档资料点击尝试网页版、手机版等更多版本]]></content>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F08%2F08%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
