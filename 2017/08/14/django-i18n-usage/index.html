@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Welcome friends" />
+  <meta name="keywords" content="django,i18n,python," />
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="description" content="关于我非计算机相关专业，某不知名大学大三学生。业余时间自学了Python编程，Django，MS SQL Server，对HTML，Bootstrap，有一定了解。自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。希望能把我在学习过程中遇到的问题，以及">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://liuheng268.github.io/about/index.html">
+<meta name="description" content="第一步：在你的Python代码和模板中嵌入待翻译的字符串。 第二步：把那些字符串翻译成你要支持的语言。 第三步：在你的Django settings文件中激活本地中间件。  1. 如何嵌入待翻译的字符串使用函数django.utils.translation.ugettext() 来指定一个翻译字符串。 作为惯例，使用短别名 _ 来引入这个函数以节省键入时间. 1234from django.u">
+<meta name="keywords" content="django,i18n,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django i18n 国际化翻译使用方法">
+<meta property="og:url" content="http://liuheng268.github.io/2017/08/14/django-i18n-usage/index.html">
 <meta property="og:site_name" content="Kevin&#39;s BLOG">
-<meta property="og:description" content="关于我非计算机相关专业，某不知名大学大三学生。业余时间自学了Python编程，Django，MS SQL Server，对HTML，Bootstrap，有一定了解。自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。希望能把我在学习过程中遇到的问题，以及">
+<meta property="og:description" content="第一步：在你的Python代码和模板中嵌入待翻译的字符串。 第二步：把那些字符串翻译成你要支持的语言。 第三步：在你的Django settings文件中激活本地中间件。  1. 如何嵌入待翻译的字符串使用函数django.utils.translation.ugettext() 来指定一个翻译字符串。 作为惯例，使用短别名 _ 来引入这个函数以节省键入时间. 1234from django.u">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-09T03:50:41.504Z">
+<meta property="og:updated_time" content="2017-08-14T05:36:45.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="关于我非计算机相关专业，某不知名大学大三学生。业余时间自学了Python编程，Django，MS SQL Server，对HTML，Bootstrap，有一定了解。自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。希望能把我在学习过程中遇到的问题，以及">
+<meta name="twitter:title" content="Django i18n 国际化翻译使用方法">
+<meta name="twitter:description" content="第一步：在你的Python代码和模板中嵌入待翻译的字符串。 第二步：把那些字符串翻译成你要支持的语言。 第三步：在你的Django settings文件中激活本地中间件。  1. 如何嵌入待翻译的字符串使用函数django.utils.translation.ugettext() 来指定一个翻译字符串。 作为惯例，使用短别名 _ 来引入这个函数以节省键入时间. 1234from django.u">
 
 
 
@@ -133,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://liuheng268.github.io/about/"/>
+  <link rel="canonical" href="http://liuheng268.github.io/2017/08/14/django-i18n-usage/"/>
 
 
 
 
 
-  <title>about | Kevin's BLOG</title>
+  <title>Django i18n 国际化翻译使用方法 | Kevin's BLOG</title>
   
 
 
@@ -308,33 +309,314 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuheng268.github.io/2017/08/14/django-i18n-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kevin Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevin's BLOG">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">about</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><h3 id="非计算机相关专业，某不知名大学大三学生。"><a href="#非计算机相关专业，某不知名大学大三学生。" class="headerlink" title="非计算机相关专业，某不知名大学大三学生。"></a>非计算机相关专业，某不知名大学大三学生。</h3><h3 id="业余时间自学了Python编程，Django，MS-SQL-Server，对HTML，Bootstrap，有一定了解。"><a href="#业余时间自学了Python编程，Django，MS-SQL-Server，对HTML，Bootstrap，有一定了解。" class="headerlink" title="业余时间自学了Python编程，Django，MS SQL Server，对HTML，Bootstrap，有一定了解。"></a>业余时间自学了Python编程，Django，MS SQL Server，对HTML，Bootstrap，有一定了解。</h3><h3 id="自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。"><a href="#自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。" class="headerlink" title="自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。"></a>自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。</h3><h3 id="最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。"><a href="#最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。" class="headerlink" title="最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。"></a>最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。</h3><h3 id="希望能把我在学习过程中遇到的问题，以及解决方法总结一下，留个备忘，也希望能帮助到有需要的朋友们。"><a href="#希望能把我在学习过程中遇到的问题，以及解决方法总结一下，留个备忘，也希望能帮助到有需要的朋友们。" class="headerlink" title="希望能把我在学习过程中遇到的问题，以及解决方法总结一下，留个备忘，也希望能帮助到有需要的朋友们。"></a>希望能把我在学习过程中遇到的问题，以及解决方法总结一下，留个备忘，也希望能帮助到有需要的朋友们。</h3><h2 id="总而言之："><a href="#总而言之：" class="headerlink" title="总而言之："></a>总而言之：</h2><h3 id="我仍是一只学习编程、前端、后端的小菜鸟。"><a href="#我仍是一只学习编程、前端、后端的小菜鸟。" class="headerlink" title="我仍是一只学习编程、前端、后端的小菜鸟。"></a>我仍是一只学习编程、前端、后端的小菜鸟。</h3><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><h3 id="NAME：-Kevin-Liu"><a href="#NAME：-Kevin-Liu" class="headerlink" title="NAME： Kevin Liu"></a>NAME： Kevin Liu</h3><h3 id="QQ：752907297"><a href="#QQ：752907297" class="headerlink" title="QQ：752907297"></a>QQ：752907297</h3><h3 id="Email-d752907297-qq-com"><a href="#Email-d752907297-qq-com" class="headerlink" title="Email: d752907297@qq.com"></a>Email: d752907297@qq.com</h3><h3 id="非常期待与朋友们交流学习感悟。"><a href="#非常期待与朋友们交流学习感悟。" class="headerlink" title="非常期待与朋友们交流学习感悟。"></a>非常期待与朋友们交流学习感悟。</h3>
+          <h2 class="post-title" itemprop="name headline">Django i18n 国际化翻译使用方法</h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T13:18:50+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/django备忘/" itemprop="url" rel="index">
+                    <span itemprop="name">django备忘</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/14/django-i18n-usage/" class="leancloud_visitors" data-flag-title="Django i18n 国际化翻译使用方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,045
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <ul>
+<li>第一步：在你的Python代码和模板中嵌入待翻译的字符串。</li>
+<li>第二步：把那些字符串翻译成你要支持的语言。</li>
+<li>第三步：在你的Django settings文件中激活本地中间件。</li>
+</ul>
+<h2 id="1-如何嵌入待翻译的字符串"><a href="#1-如何嵌入待翻译的字符串" class="headerlink" title="1. 如何嵌入待翻译的字符串"></a>1. 如何嵌入待翻译的字符串</h2><p>使用函数django.utils.translation.ugettext() 来指定一个翻译字符串。 作为惯例，使用短别名 _ 来引入这个函数以节省键入时间.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.utils.translation <span class="keyword">import</span> ugettext <span class="keyword">as</span> _</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_view</span><span class="params">(request)</span>:</span></div><div class="line">    output = _(<span class="string">"Welcome to my site."</span>)</div><div class="line">    <span class="keyword">return</span> HttpResponse(output)</div></pre></td></tr></table></figure>
+<h3 id="小注意："><a href="#小注意：" class="headerlink" title="小注意："></a>小注意：</h3><p>ugettext()函数的参数可以是变量，但检测工具make_messages.py将找不到这些字符串。</p>
+<h3 id="占位符："><a href="#占位符：" class="headerlink" title="占位符："></a>占位符：</h3><p>特定语言的译文可能对翻译字符串重新排序，使用位置占位符可能达不到预期效果，建议使用命名字符串插入，如</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_('today is %(<span class="name">day</span>)s'%&#123;'day':'monday'&#125;)</div></pre></td></tr></table></figure>
+<h3 id="扩展知识："><a href="#扩展知识：" class="headerlink" title="扩展知识："></a>扩展知识：</h3><p>使用 django.utils.translation.gettext_noop() 函数来标记一个不需要立即翻译的字符串。</p>
+<p>这个串会稍后从变量翻译。使用这种方法的环境是，有字符串必须以原始语言的形式存储（如储存在数据库中的字符串）而在最后需要被翻译出来（如显示给用户时）。<br>使用 django.utils.translation.gettext_lazy() 函数，使得其中的值只有在访问时才会被翻译，而不是在gettext_lazy() 被调用时翻译。<br>使用django.utils.translation.ungettext()来指定以复数形式表示的消息。</p>
+<h2 id="2-模块中嵌入翻译字符串"><a href="#2-模块中嵌入翻译字符串" class="headerlink" title="2. 模块中嵌入翻译字符串"></a>2. 模块中嵌入翻译字符串</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Django模板使用两种模板标签，为了使得模板访问到标签，需要将 &#123;% load i18n %&#125; 放在模板最前面。</div><div class="line"></div><div class="line">这个 &#123;% trans %&#125; 模板标记翻译一个常量字符串 或 可变内容：</div></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;%load i18n%&#125;</div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;%trans 'this is a title' %&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;%trans strvar %&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="小注意：-1"><a href="#小注意：-1" class="headerlink" title="小注意："></a>小注意：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在一个带 &#123;% trans %&#125;的字符串中，混进一个模板变量是不可能的。</div><div class="line">如果译文要求字符串带有变量，使用&#123;%blocktrans%&#125;···&#123;%endblocktrans%&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-如何创建语言文件"><a href="#3-如何创建语言文件" class="headerlink" title="3. 如何创建语言文件"></a>3. 如何创建语言文件</h2><p>当你标记了翻译字符串，你就需要写出（或获取已有的）对应的语言翻译信息。 这里就是它如何工作的。</p>
+<h3 id="a-为一种语言创建消息文件-po"><a href="#a-为一种语言创建消息文件-po" class="headerlink" title="a. 为一种语言创建消息文件.po"></a>a. 为一种语言创建消息文件.po</h3><p>信息文件是包含了某一语言翻译字符串和对这些字符串的翻译的一个文本文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python django-admin.py makemessages ‐l zh_CN</div></pre></td></tr></table></figure>
+<p>这段脚本遍历你的项目源树或你的应用程序源树并且提取出所有为翻译而被标记的字符串。</p>
+<p>它在locale/LANG/LC_MESSAGES 目录下创建（或更新）了一个信息文件。针对上面的zh_CN，应该是locale/zh_CN/LC_MESSAGES/django.po。</p>
+<p>‘Welcome to my site’生成的.op示例如下：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#: path/<span class="keyword">to</span>/<span class="keyword">python</span>/module.<span class="keyword">py</span>:<span class="number">23</span></div><div class="line">msgid <span class="string">"Welcome to my site."</span></div><div class="line">msgstr <span class="string">""</span></div></pre></td></tr></table></figure>
+<h3 id="b-编译信息文件-mo"><a href="#b-编译信息文件-mo" class="headerlink" title="b. 编译信息文件.mo"></a>b. 编译信息文件.mo</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">python django-admin.py compilemessages</div></pre></td></tr></table></figure>
+<h2 id="4-本地化配置"><a href="#4-本地化配置" class="headerlink" title="4. 本地化配置"></a>4. 本地化配置</h2><p>让每一个使用者各自指定语言偏好，就需要使用 LocaleMiddleware 。 LocaleMiddleware 使得Django基于请求的数据进行语言选择，从而为每一位用户定制内容。 它为每一个用户定制内容。</p>
+<h3 id="偏好设置："><a href="#偏好设置：" class="headerlink" title="偏好设置："></a>偏好设置：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">LANGUAGES = (</div><div class="line">    (<span class="string">'cn'</span>, _(<span class="string">'China'</span>)),</div><div class="line">    (<span class="string">'en'</span>, _(<span class="string">'English'</span>)),</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>使用 LocaleMiddleware 需要在 MIDDLEWARE_CLASSES 设置中增加’django.middleware.locale.LocaleMiddleware’ 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">MIDDLEWARE_CLASSES = (</div><div class="line">    <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,</div><div class="line">    <span class="string">'django.middleware.locale.LocaleMiddleware'</span>,</div><div class="line">    <span class="string">'django.middleware.common.CommonMiddleware'</span>,</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>中间件的顺序是有影响的，最好按照依照以下要求：</p>
+<p>保证它是第一批安装的中间件类。<br>因为 LocalMiddleware 要用到session数据，所以需要放在 SessionMiddleware 之后。<br>如果你使用CacheMiddleware,把LocaleMiddleware放在它后面。<br>LocaleMiddleware 按照如下算法确定用户的语言:</p>
+<ul>
+<li>首先，在当前用户的 session 的中查找django_language键；</li>
+<li>如未找到，它会找寻一个cookie</li>
+<li>还找不到的话，它会在 HTTP 请求头部里查找Accept‐Language， 该头部是你的浏览器发送的，并且按优先顺序告诉服务器你的语言偏好。</li>
+<li>Django会尝试头部中的每一个语种直到它发现一个可用的翻译。</li>
+<li>以上都失败了的话, 就使用全局的 LANGUAGE_CODE 设定值。</li>
+</ul>
+<blockquote>
+<p>声明：此文章非原创</p>
+<p>参考文章：<a href="http://www.cnblogs.com/oubo/archive/2012/04/05/2433690.html" target="_blank" rel="external">http://www.cnblogs.com/oubo/archive/2012/04/05/2433690.html</a></p>
+</blockquote>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>打赏博主</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Kevin Liu WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Kevin Liu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liuheng268.github.io/2017/08/14/django-i18n-usage/" title="Django i18n 国际化翻译使用方法">http://liuheng268.github.io/2017/08/14/django-i18n-usage/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/django/" rel="tag"># django</a>
+          
+            <a href="/tags/i18n/" rel="tag"># i18n</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/12/git-command/" rel="next" title="常用 Git 命令清单">
+                <i class="fa fa-chevron-left"></i> 常用 Git 命令清单
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_cqq"></a>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_douban"></a>
+	<a href="http://www.jiathis.com/share?uid=2141174" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2141174" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -449,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于我"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非计算机相关专业，某不知名大学大三学生。"><span class="nav-number">1.1.</span> <span class="nav-text">非计算机相关专业，某不知名大学大三学生。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业余时间自学了Python编程，Django，MS-SQL-Server，对HTML，Bootstrap，有一定了解。"><span class="nav-number">1.2.</span> <span class="nav-text">业余时间自学了Python编程，Django，MS SQL Server，对HTML，Bootstrap，有一定了解。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。"><span class="nav-number">1.3.</span> <span class="nav-text">自己做了一个选课推荐项目，边学边做，遇到不少困难，从网上的大神博客中获取了巨量帮助。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。"><span class="nav-number">1.4.</span> <span class="nav-text">最近放假有时间，刚开始用Github，见识到了平台的强大。看到众多大神都用Hexo搭建了自己的简易博客，也来试试。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#希望能把我在学习过程中遇到的问题，以及解决方法总结一下，留个备忘，也希望能帮助到有需要的朋友们。"><span class="nav-number">1.5.</span> <span class="nav-text">希望能把我在学习过程中遇到的问题，以及解决方法总结一下，留个备忘，也希望能帮助到有需要的朋友们。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总而言之："><span class="nav-number">2.</span> <span class="nav-text">总而言之：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我仍是一只学习编程、前端、后端的小菜鸟。"><span class="nav-number">2.1.</span> <span class="nav-text">我仍是一只学习编程、前端、后端的小菜鸟。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#联系方式"><span class="nav-number">3.</span> <span class="nav-text">联系方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NAME：-Kevin-Liu"><span class="nav-number">3.1.</span> <span class="nav-text">NAME： Kevin Liu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QQ：752907297"><span class="nav-number">3.2.</span> <span class="nav-text">QQ：752907297</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Email-d752907297-qq-com"><span class="nav-number">3.3.</span> <span class="nav-text">Email: d752907297@qq.com</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非常期待与朋友们交流学习感悟。"><span class="nav-number">3.4.</span> <span class="nav-text">非常期待与朋友们交流学习感悟。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-如何嵌入待翻译的字符串"><span class="nav-number">1.</span> <span class="nav-text">1. 如何嵌入待翻译的字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小注意："><span class="nav-number">1.1.</span> <span class="nav-text">小注意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#占位符："><span class="nav-number">1.2.</span> <span class="nav-text">占位符：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展知识："><span class="nav-number">1.3.</span> <span class="nav-text">扩展知识：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-模块中嵌入翻译字符串"><span class="nav-number">2.</span> <span class="nav-text">2. 模块中嵌入翻译字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小注意：-1"><span class="nav-number">2.1.</span> <span class="nav-text">小注意：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-如何创建语言文件"><span class="nav-number">3.</span> <span class="nav-text">3. 如何创建语言文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-为一种语言创建消息文件-po"><span class="nav-number">3.1.</span> <span class="nav-text">a. 为一种语言创建消息文件.po</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-编译信息文件-mo"><span class="nav-number">3.2.</span> <span class="nav-text">b. 编译信息文件.mo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-本地化配置"><span class="nav-number">4.</span> <span class="nav-text">4. 本地化配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#偏好设置："><span class="nav-number">4.1.</span> <span class="nav-text">偏好设置：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -610,10 +892,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
